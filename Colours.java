@@ -2,14 +2,15 @@ class Colours{
 	static String[] names={null,null,null,null,null,null,null};
     static int position=0;
     static void data(String value){
+	if(position>7){
+	System.err.println("clours names exceed");
+		return;
+	}
 	names[position]=value;
     System.out.println("colours names :"+value);
 	position++;
 	
-	if(position>7){
-		System.err.println("clours names exceed");
-		return;
-	}	
+	
 	}
 
 	static void displayDetails(){
