@@ -46,9 +46,9 @@ class Billionaries{
 								displayDetails();
 				return ;
 				} 
-				//else{
-					//System.out.println("not found");
-				//}
+			
+
+			
 		    }
 			
 			}
@@ -58,37 +58,33 @@ class Billionaries{
 	}
 	static String update(int index , String newBillionarie){
 		if(newBillionarie!=null){
-			for (int point=0;point<names.length;point++){
-			if(point==2){
-				String ref2=names[point];
-				names[point]=newBillionarie;
+			
+				names[index]=newBillionarie;
 				
 			    System.out.println(newBillionarie);
 			   
 			displayDetails();
 				
-			    }
-			}
-		
+			   
 		}
 		return "true";
 		
 	}
-	static boolean delete(String billionarie){
-		if(billionarie.length()>=4){
-		for(int point=0;point<names.length;point++){
-			if(point==3){
-			String ref3=names[point];
-			names[point]=null;
-			System.out.println(names[point]);
-			displayDetails();
-                return true;
+	static boolean delete(String newName){
+		
+		if(newName.length()>3){
+			for(int index=0;index<names.length;index++){
+				if(index==3){
+					String ref3=names[index];
+					names[index]=null;
+					System.out.println(names[index]);	
+					displayDetails();
+				}
 			}
 		}
-		}return false;
-		
-	}
-	static boolean delete(int index ,String billionarie){
+			return false;
+		}
+		static boolean delete(int index ,String billionarie){
 		if (billionarie!=null){
 			for(int point=0;point<names.length;point++){
 			if (index==7){
@@ -103,9 +99,9 @@ class Billionaries{
 		}
 		return false;
 	}
+		
 	
-	
-	
+
 	
 	
 	public static void main(String [] args){
@@ -136,8 +132,10 @@ class Billionaries{
 	    System.out.println(newName);
 		
 		System.out.println("-------delete----------------");
-		boolean ref3=Billionaries.delete("Jeff Bezos");
-		System.out.println(ref3);
+		String ref10="Jeff Bozes";
+		boolean ref3=Billionaries.delete(ref10);
+		System.out.println(ref3 );
+		
 		System.out.println("-------delete using index----------------");
 		boolean ref4=Billionaries.delete("Mukesh Ambani");
 		System.out.println(ref4);
